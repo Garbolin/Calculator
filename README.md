@@ -1,9 +1,9 @@
 # Calculator 🟰 
 
-➗ Microproject to practice HTML, CSS and JavaScript <br>
+➗ Microproject to practice HTML, CSS and JavaScript <br> <br>
 ✖️ With a ☀️Light-Dark🌙 mode <br> <br>
-➕ It was made with all the instructions of this video:  <br>
-➖ [https://www.youtube.com/watch?v=UeziLIKSCUs] <br> <br>
+➕ It was made with all the instructions of this video: [https://www.youtube.com/watch?v=UeziLIKSCUs] <br> <br>
+➖  <a href="https://www.freepik.es/icono/igual_9210967#fromView=search&page=1&position=7&uuid=55e4e393-c6bb-4d07-88ca-843254f35af0">Favicon from Laisa Islam Ani</a><br> <br>
 
 
 <div display="center">
