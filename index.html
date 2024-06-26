@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="dark_mode">
+            <span class="dark">&#9790;</span>
+            <span class="light">&#9728;</span>
+        </div>
+        <form>
+            <div class="resultbox">
+                <input type="text" name="expression"readonly>
+                <input type="text" name="result" readonly>
+            </div>
+            <div class="buttons">
+                <div>
+                    <!-- para borrar la expresion y el resultado -->
+                    <input type="button" value="AC" class="fnkeys" onclick="expression.value = ''; result.value = ''">
+                    <!-- para borrar el ultimo key escrito -->
+                    <input type="button" value="⬅" class="fnkeys" onclick="expression.value = expression.value.toString().slice(0, -1)">
+                    <input type="button" value="/" class="operator" onclick="expression.value += '/'">
+                    <input type="button" value="*" class="operator" onclick="expression.value += '*'">
+                </div>
+
+                <div>
+                    <input type="button" value="7" onclick="expression.value += '7'">
+                    <input type="button" value="8" onclick="expression.value += '8'">
+                    <input type="button" value="9" onclick="expression.value += '9'">
+                    <input type="button" value="-" class="operator" onclick="expression.value += '-'">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="expression.value += '4'">
+                    <input type="button" value="5" onclick="expression.value += '5'">
+                    <input type="button" value="6" onclick="expression.value += '6'">
+                    <input type="button" value="+" class="operator" onclick="expression.value += '+'">
+                </div>
+
+                <div>
+                    <input type="button" value="1" onclick="expression.value += '1'">
+                    <input type="button" value="2" onclick="expression.value += '2'">
+                    <input type="button" value="3" onclick="expression.value += '3'">
+                    <input type="button" value="." class="operator" onclick="expression.value += '.'">
+                </div>
+
+                <div>
+                    <input type="button" value="00" onclick="expression.value += '00'">
+                    <input type="button" value="0" onclick="expression.value += '0'">
+                    <input type="button" value="=" class="operator equal" onclick="result.value = new Intl.NumberFormat().format(eval(expression.value))">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+ <script>
+    const darkBtn = document.querySelector('.dark');
+    const lightBtn =document.querySelector('.light');
+    lightBtn.style = "opacity: 0.1";
+
+    darkBtn.addEventListener('click', () => {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+
+        //set mode value to dark and save it, if user refreshes de page, the browser can access this value
+        window.localStorage.setItem('mode', 'dark');
+
+        darkBtn.style = "opacity: 1";
+        lightBtn.style = "opacity: 0.1";
+    });
+
+    lightBtn.addEventListener('click', () => {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+
+        window.localStorage.setItem('mode', 'light');
+
+        darkBtn.style = "opacity: 0.1";
+        lightBtn.style = "opacity: 1";
+    });
+
+    const mode = window.localStorage.getItem('mode'); //get mode value
+
+    if(mode == 'dark') {
+        document.documentElement.classList.remove('light');
+        docuemnt.documentElement.classList.add('dark');
+        darkbtn.style = "opacity: 1";
+        lightBtn.style = "opacity: 0.1";
+    } else {
+        document.documentElement.classList.remove('dark');
+        docuemnt.documentElement.classList.add('light');
+        darkbtn.style = "opacity: 0.1";
+        lightBtn.style = "opacity: 1";
+    }
+</script>
+</html>
