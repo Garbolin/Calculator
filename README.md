@@ -1,4 +1,5 @@
 # Calculator 🟰 
+## 🔗 Link to [calculator](https://inspiring-sopapillas-fc7087.netlify.app)
 
 ➗ Microproject to practice HTML, CSS and JavaScript <br> <br>
 ✖️ With a ☀️Light-Dark🌙 mode <br> <br>
